@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>LAB | React WikiCountries</h1>
+      
       <Routes>
         <Route path="/" element={<HomePage send={countries} />}>
           Go to homepage

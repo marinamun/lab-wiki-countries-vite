@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../App.css";
 
 function HomePage(props) {
   return props.send ? (
@@ -7,20 +8,23 @@ function HomePage(props) {
 
       {props.send.map((country) => {
         return (
-          <div key={country._id}>
-            <Link to={`/${country.alpha3Code}`}>{country.name.common}</Link>
+          <div key={country._id} className="country-flag">
+            <Link to={`/${country.alpha3Code}`} className="name-of-country">
+              {country.name.common}
+            </Link>
             <img
               src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`}
               style={{ width: "40px" }}
+              className="flag"
             />
           </div>
         );
       })}
     </div>
   ) : (
-    <>
+    <div>
       <h1>Loading...</h1>
-    </>
+    </div>
   );
 }
 
